@@ -6,4 +6,4 @@
  * Please make sure to get the JSON and not the RSS link.  It won't work well 
  * otherwise.
  */
-$url = 'yourlongurlhere';
+$url = 'yoururlhere';
