@@ -1,5 +1,5 @@
 <?php 
 
 return array(
-    'login' => '/api/login/wehatesreposts',
+    'login' => '/api/login/<yourusernamehere>',
 );
