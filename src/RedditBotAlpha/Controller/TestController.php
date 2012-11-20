@@ -19,8 +19,13 @@ class TestController extends AbstractActionController
         $hc->setMethod('GET');
         $response = $hc->send();
         
+        $listingData = json_decode($response->getBody(), true);
+        $ls = $this->getServiceLocator()->get('listing-service');
+        $ls->hydrate($listingData);
+        $listing = $ls->getModel();
         
-        $view = new ViewModel(array('body' => json_decode($response->getBody())));
+        
+        $view = new ViewModel(array('listing' => $listing));
         $view->setTerminal(TRUE);
         
         return $view;

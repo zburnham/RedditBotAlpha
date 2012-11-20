@@ -44,39 +44,52 @@ class Module
     {
         return array(
             'factories' => array(
-                'post' => function($sm) {
-                    $post = new Model\Post;
-                    return $post;
+                'listing' => function() {
+                    return new Model\Listing;
                 },
-                'url-config' => function () {
-                    return new Config(include __DIR__ . '/config/url.config.php' );
+                'listing-service' => function($sm) {
+                    $listingService = new Service\Listing;
+                    $listingService->setModel($sm->get('listing'));
+                    $listingService->setHydrator($sm->get('listing-hydrator'));
+                    return $listingService;
                 },
-                'subreddit' => function ($sm) {
-                    return new Model\Subreddit;
+                'listing-hydrator' => function($sm) {
+                    return new Hydrator\Listing;
                 },
-                'redditRequest' => function ($sm) {
-                    $request = new Model\Request;
-                    $connection = $sm->get('connection');
-                    $request->setConnection($connection);
-                    $urls = $sm->get('url-config')->get('urls');
-                    $request->setUrls($urls);
-                    return $request;
-                },
-                'connection' => function ($sm) {
-                    $connection = new Network\Connection;
-                    $parameters = $sm->get('url-config')->get('parameters');
-                    $connection->setParameters($parameters);
-                    return $connection;
-                },
-                'redditResponse' => function ($sm) {
-                    $response = new Model\Response;
-                    return $response;
-                },
+                
+//                'post' => function($sm) {
+//                    $post = new Model\Post;
+//                    return $post;
+//                },
+//                'url-config' => function () {
+//                    return new Config(include __DIR__ . '/config/url.config.php' );
+//                },
+//                'subreddit' => function ($sm) {
+//                    return new Model\Subreddit;
+//                },
+//                'redditRequest' => function ($sm) {
+//                    $request = new Model\Request;
+//                    $connection = $sm->get('connection');
+//                    $request->setConnection($connection);
+//                    $urls = $sm->get('url-config')->get('urls');
+//                    $request->setUrls($urls);
+//                    return $request;
+//                },
+//                'connection' => function ($sm) {
+//                    $connection = new Network\Connection;
+//                    $parameters = $sm->get('url-config')->get('parameters');
+//                    $connection->setParameters($parameters);
+//                    return $connection;
+//                },
+//                'redditResponse' => function ($sm) {
+//                    $response = new Model\Response;
+//                    return $response;
+//                },
                 'http-client' => function ($sm) {
                     $httpClient = new HttpClient;
                     return $httpClient;
                 },
-                'post-table-gateway' => 'tbd',
+//                'post-table-gateway' => 'tbd',
             ),
         );
     }
