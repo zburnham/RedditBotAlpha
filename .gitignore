@@ -16,3 +16,4 @@ results
 node_modules
 npm-debug.log
 /url.php
+config/account.config.php
