@@ -86,7 +86,8 @@ class Module
 //                    return $response;
 //                },
                 'http-client' => function ($sm) {
-                    $httpClient = new HttpClient;
+                    $httpClient = new HttpClient();
+                    $httpClient->setHeaders(array('User-Agent' => 'Wassacomanago'));
                     return $httpClient;
                 },
 //                'post-table-gateway' => 'tbd',

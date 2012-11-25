@@ -9,6 +9,7 @@
 
 namespace RedditBotAlpha\Service;
 
+use Zend\Db\TableGateway\TableGateway;
 use Zend\Stdlib\Hydrator\HydratorInterface;
 
 class AbstractServiceClass
@@ -27,9 +28,23 @@ class AbstractServiceClass
      */
     protected $hydrator;
     
-    public function hydrate($data)
+    /**
+     * Database connection.
+     *
+     * @var TableGateway
+     */
+    protected $tableGateway;
+    
+    /**
+     * Hydrates and returns the model object.
+     * 
+     * @param array $data
+     * @return mixed
+     */
+    public function hydrate(array $data)
     {
         $this->getHydrator()->hydrate($data, $this->getModel());
+        return $this->getModel();
     }
     
     /**
@@ -65,6 +80,24 @@ class AbstractServiceClass
     public function setHydrator(HydratorInterface $hydrator)
     {
         $this->hydrator = $hydrator;
+        return $this;
+    }
+    
+    /**
+     * @return TableGateway
+     */
+    public function getTableGateway()
+    {
+        return $this->tableGateway;
+    }
+
+    /**
+     * @param \Zend\Db\TableGateway\TableGateway $tableGateway
+     * @return \Createaccount\Service\AbstractServiceClass
+     */
+    public function setTableGateway(TableGateway $tableGateway)
+    {
+        $this->tableGateway = $tableGateway;
         return $this;
     }
 }

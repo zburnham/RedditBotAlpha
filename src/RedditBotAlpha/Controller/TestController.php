@@ -15,19 +15,23 @@ class TestController extends AbstractActionController
     public function indexAction()
     {
         $hc = $this->getServiceLocator()->get('http-client');
-        $hc->setUri('http://www.reddit.com/r/pics/.json');
+        $hc->setUri('http://www.reddit.com/r/all/.json');
         $hc->setMethod('GET');
         $response = $hc->send();
         
         $listingData = json_decode($response->getBody(), true);
         $ls = $this->getServiceLocator()->get('listing-service');
-        $ls->hydrate($listingData);
-        $listing = $ls->getModel();
-        
+        $listing = $ls->hydrate($listingData);
         
         $view = new ViewModel(array('listing' => $listing));
+        
         $view->setTerminal(TRUE);
         
         return $view;
+    }
+    
+    public function getchildrenAction()
+    {
+        
     }
 }
