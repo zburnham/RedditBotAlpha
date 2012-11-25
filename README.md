@@ -1,4 +1,4 @@
 RedditBotAlpha
 ==============
 
-PHP script to poll reddit for new posts and detect reposts.
+Intended to be a ZF2 module to interface with Reddit's API.
