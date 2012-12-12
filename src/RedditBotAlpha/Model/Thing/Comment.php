@@ -104,7 +104,7 @@ class Comment extends Thing implements Votable, Created
     /**
      * @return string
      */
-    public function getAuthor_flair_css_class()
+    public function getAuthorFlairCssClass()
     {
         return $this->author_flair_css_class;
     }
@@ -113,27 +113,27 @@ class Comment extends Thing implements Votable, Created
      * @param string $author_flair_css_class
      * @return \RedditBotAlpha\Model\Thing\Comment
      */
-    public function setAuthor_flair_css_class($author_flair_css_class)
+    public function setAuthorFlairCssClass($authorFlairCssClass)
     {
-        $this->author_flair_css_class = $author_flair_css_class;
+        $this->author_flair_css_class = $authorFlairCssClass;
         return $this;
     }
 
     /**
      * @return string
      */
-    public function getAuthor_flair_text()
+    public function getAuthorFlairText()
     {
         return $this->author_flair_text;
     }
 
     /**
-     * @param string $author_flair_text
+     * @param string $authorFlairText
      * @return \RedditBotAlpha\Model\Thing\Comment
      */
-    public function setAuthor_flair_text($author_flair_text)
+    public function setAuthorFlairText($authorFlairText)
     {
-        $this->author_flair_text = $author_flair_text;
+        $this->author_flair_text = $authorFlairText;
         return $this;
     }
 
@@ -158,54 +158,54 @@ class Comment extends Thing implements Votable, Created
     /**
      * @return string
      */
-    public function getBody_html()
+    public function getBodyHtml()
     {
         return $this->body_html;
     }
 
     /**
-     * @param string $body_html
+     * @param string $bodyHtml
      * @return \RedditBotAlpha\Model\Thing\Comment
      */
-    public function setBody_html($body_html)
+    public function setBodyHtml($bodyHtml)
     {
-        $this->body_html = $body_html;
+        $this->body_html = $bodyHtml;
         return $this;
     }
 
     /**
      * @return string
      */
-    public function getLink_id()
+    public function getLinkId()
     {
         return $this->link_id;
     }
 
     /**
-     * @param string $link_id
+     * @param string $linkId
      * @return \RedditBotAlpha\Model\Thing\Comment
      */
-    public function setLink_id($link_id)
+    public function setLinkId($linkId)
     {
-        $this->link_id = $link_id;
+        $this->link_id = $linkId;
         return $this;
     }
 
     /**
      * @return string
      */
-    public function getParent_id()
+    public function getParentId()
     {
         return $this->parent_id;
     }
 
     /**
-     * @param string $parent_id
+     * @param string $parentId
      * @return \RedditBotAlpha\Model\Thing\Comment
      */
-    public function setParent_id($parent_id)
+    public function setParentId($parentId)
     {
-        $this->parent_id = $parent_id;
+        $this->parent_id = $parentId;
         return $this;
     }
 
@@ -230,20 +230,18 @@ class Comment extends Thing implements Votable, Created
     /**
      * @return string
      */
-    public function getSubreddit_id()
+    public function getSubredditId()
     {
         return $this->subreddit_id;
     }
     
     /**
-     * @param string $subreddit_id
+     * @param string $subredditId
      * @return \RedditBotAlpha\Model\Thing\Comment
      */
-    public function setSubreddit_id($subreddit_id)
+    public function setSubredditId($subredditId)
     {
-        $this->subreddit_id = $subreddit_id;
+        $this->subreddit_id = $subredditId;
         return $this;
     }
-
-
 }

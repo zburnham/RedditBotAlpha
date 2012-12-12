@@ -171,18 +171,18 @@ class Thing
     /**
      * @return decimal
      */
-    public function getCreated_utc()
+    public function getCreatedUtc()
     {
         return $this->created_utc;
     }
 
     /**
-     * @param decimal $created_utc
+     * @param decimal $createdUtc
      * @return \RedditBotAlpha\Model\Thing
      */
-    public function setCreated_utc($created_utc)
+    public function setCreatedUtc($createdUtc)
     {
-        $this->created_utc = $created_utc;
+        $this->created_utc = $createdUtc;
         return $this;
     }
 

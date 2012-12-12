@@ -207,37 +207,37 @@ class Link extends Thing implements Created, Votable
     /**
      * @return string
      */
-    public function getAuthor_flair_css_class()
+    public function getAuthorFlairCssClass()
     {
         return $this->author_flair_css_class;
     }
 
     /**
      * 
-     * @param string $author_flair_css_class
+     * @param string $authorFlairCssClass
      * @return \RedditBotAlpha\Model\Thing\Link
      */
-    public function setAuthor_flair_css_class($author_flair_css_class)
+    public function setAuthorFlairCssClass($authorFlairCssClass)
     {
-        $this->author_flair_css_class = $author_flair_css_class;
+        $this->author_flair_css_class = $authorFlairCssClass;
         return $this;
     }
 
     /**
      * @return string
      */
-    public function getAuthor_flair_text()
+    public function getAuthorFlairText()
     {
         return $this->author_flair_text;
     }
 
     /**
-     * @param string $author_flair_text
+     * @param string $authorFlairText
      * @return \RedditBotAlpha\Model\Thing\Link
      */
-    public function setAuthor_flair_text($author_flair_text)
+    public function setAuthorFlairText($authorFlairText)
     {
-        $this->author_flair_text = $author_flair_text;
+        $this->author_flair_text = $authorFlairText;
         return $this;
     }
 
@@ -298,18 +298,18 @@ class Link extends Thing implements Created, Votable
     /**
      * @return bool
      */
-    public function getIs_self()
+    public function getIsFelf()
     {
         return $this->is_self;
     }
 
     /**
-     * @param bool $is_self
+     * @param bool $isSelf
      * @return \RedditBotAlpha\Model\Thing\Link
      */
-    public function setIs_self(bool $is_self)
+    public function setIsSelf(bool $isSelf)
     {
-        $this->is_self = $is_self;
+        $this->is_self = $isSelf;
         return $this;
     }
 
@@ -334,54 +334,54 @@ class Link extends Thing implements Created, Votable
     /**
      * @return mixed
      */
-    public function getMedia_embed()
+    public function getMediaEmbed()
     {
         return $this->media_embed;
     }
 
     /**
-     * @param mixed $media_embed
+     * @param mixed $mediaEmbed
      * @return \RedditBotAlpha\Model\Thing\Link
      */
-    public function setMedia_embed($media_embed)
+    public function setMediaEmbed($mediaEmbed)
     {
-        $this->media_embed = $media_embed;
+        $this->media_embed = $mediaEmbed;
         return $this;
     }
 
     /**
      * @return int
      */
-    public function getNum_comments()
+    public function getNumComments()
     {
         return $this->num_comments;
     }
 
     /**
-     * @param int $num_comments
+     * @param int $numComments
      * @return \RedditBotAlpha\Model\Thing\Link
      */
-    public function setNum_comments($num_comments)
+    public function setNumComments($numComments)
     {
-        $this->num_comments = $num_comments;
+        $this->num_comments = $numComments;
         return $this;
     }
 
     /**
      * @return bool
      */
-    public function getOver_18()
+    public function getOver18()
     {
         return $this->over_18;
     }
 
     /**
-     * @param bool $over_18
+     * @param bool $over18
      * @return \RedditBotAlpha\Model\Thing\Link
      */
-    public function setOver_18(bool $over_18)
+    public function setOver_18(bool $over18)
     {
-        $this->over_18 = $over_18;
+        $this->over_18 = $over18;
         return $this;
     }
 
@@ -461,18 +461,18 @@ class Link extends Thing implements Created, Votable
     /**
      * @return string
      */
-    public function getSelftext_html()
+    public function getSelftextHtml()
     {
         return $this->selftext_html;
     }
 
     /**
-     * @param string $selftext_html
+     * @param string $selftextHtml
      * @return \RedditBotAlpha\Model\Thing\Link
      */
-    public function setSelftext_html($selftext_html)
+    public function setSelftextHtml($selftextHtml)
     {
-        $this->selftext_html = $selftext_html;
+        $this->selftext_html = $selftextHtml;
         return $this;
     }
 
@@ -497,18 +497,18 @@ class Link extends Thing implements Created, Votable
     /**
      * @return string
      */
-    public function getSubreddit_id()
+    public function getSubredditId()
     {
         return $this->subreddit_id;
     }
 
     /**
-     * @param string $subreddit_id
+     * @param string $subredditId
      * @return \RedditBotAlpha\Model\Thing\Link
      */
-    public function setSubreddit_id($subreddit_id)
+    public function setSubredditId($subredditId)
     {
-        $this->subreddit_id = $subreddit_id;
+        $this->subreddit_id = $subredditId;
         return $this;
     }
 
