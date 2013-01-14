@@ -16,7 +16,6 @@ class Client extends HttpClient
     
     public function __construct($uri = null, $options = null)
     {
-        
         parent::__construct($uri, $options);
         
         $this->setHeaders(array('User-Agent' => self::CUSTOM_USER_AGENT));

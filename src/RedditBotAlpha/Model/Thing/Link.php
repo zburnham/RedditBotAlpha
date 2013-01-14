@@ -13,7 +13,7 @@ use RedditBotAlpha\Model\Thing;
 use RedditBotAlpha\Model\Thing\Interfaces\Created;
 use RedditBotAlpha\Model\Thing\Interfaces\Votable;
 
-class Link extends Thing implements Created, Votable
+class Link extends Thing
 {
     /**
      * the account name of the poster
@@ -298,7 +298,7 @@ class Link extends Thing implements Created, Votable
     /**
      * @return bool
      */
-    public function getIsFelf()
+    public function getIsSelf()
     {
         return $this->is_self;
     }
