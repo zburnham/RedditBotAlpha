@@ -1,7 +1,7 @@
 <?php
 /**
- * Listing.php
- * Service class for Listing model.
+ * Subreddit.php
+ * Service class for Subreddit model.
  * 
  * @author zburnham
  * @version 0.0.1
@@ -11,7 +11,7 @@ namespace RedditBotAlpha\Service;
 
 //use RedditBotAlpha\Model\Listing as ListingModel;
 
-class Listing extends AbstractServiceClass
+class Subreddit extends AbstractServiceClass
 {
 
 }
