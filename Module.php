@@ -14,6 +14,12 @@ use Zend\Mvc\MvcEvent;
 
 use Zend\Http\Client as HttpClient;
 
+use RedditBotAlpha\Controller;
+use RedditBotAlpha\Http;
+use RedditBotAlpha\Hydrator;
+use RedditBotAlpha\Model;
+use RedditBotAlpha\Service;
+
 class Module
 {
     public function onBootstrap(MvcEvent $e)
@@ -56,7 +62,23 @@ class Module
                 'listing-hydrator' => function($sm) {
                     return new Hydrator\Listing;
                 },
-                
+                'api-login' => function($sm) {
+                    $login = new Service\API\Login;
+                    $login->setHttpClient($sm->get('http-client'));
+                    $uc = $sm->get('url-config');
+                    $ac = $sm->get('account-config');
+                    $login->setBaseUrl($uc['base']);
+                    $login->setPath($uc['login'] . strtoupper($ac['user']));
+                    $login->setUser($ac['user']);
+                    $login->setPasswd($ac['passwd']);
+                    return $login;
+                },
+                'url-config' => function() {
+                    return include(__DIR__ . '/config/url.config.php');
+                },
+                'account-config' => function() {
+                    return include(__DIR__ . '/config/account.config.php');
+                },
 //                'post' => function($sm) {
 //                    $post = new Model\Post;
 //                    return $post;
@@ -85,10 +107,9 @@ class Module
 //                    $response = new Model\Response;
 //                    return $response;
 //                },
-                'http-client' => function ($sm) {
-                    $httpClient = new HttpClient();
-                    $httpClient->setHeaders(array('User-Agent' => 'Wassacomanago'));
-                    return $httpClient;
+                'http-client' => function () {
+                    $hc = new Http\Client;
+                    return $hc;
                 },
 //                'post-table-gateway' => 'tbd',
             ),
