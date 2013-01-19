@@ -84,7 +84,7 @@ abstract class AbstractApiClass
      * TODO this should be refactored to use the Request instead of the Client
      * directly.
      * 
-     * @return array
+     * @return RedditBotAlpha\Service\Api\AbstractApiClass.php
      */
     public function call()
     {
@@ -98,7 +98,8 @@ abstract class AbstractApiClass
         $client->setParameterPost($this->getPost());
         $response = $client->send();
         $this->setRawResponse($response);
-        die (var_dump($response->getBody()));
+        $this->setDecodedResponse(json_decode($this->getRawResponse()->getBody()));
+        return $this;
     }
     
     /**
@@ -169,7 +170,7 @@ abstract class AbstractApiClass
     }
 
     /**
-     * @return array
+     * @return \stdClass
      */
     public function getDecodedResponse()
     {
@@ -177,10 +178,10 @@ abstract class AbstractApiClass
     }
 
     /**
-     * @param array $decoded_response
+     * @param \stdClass $decoded_response
      * @return \RedditBotAlpha\Service\Api\AbstractApiClass
      */
-    public function setDecodedResponse(array $decoded_response)
+    public function setDecodedResponse(\stdClass $decoded_response)
     {
         $this->decoded_response = $decoded_response;
         return $this;

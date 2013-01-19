@@ -39,7 +39,7 @@ class TestController extends AbstractActionController
     {
         $login = $this->getServiceLocator()->get('api-login');
         $response = $login->call();
-        $view = new ViewModel(array('response' => $response));
+        $view = new ViewModel(array('response' => $response->getDecodedResponse()));
         return $view;
     }
 }

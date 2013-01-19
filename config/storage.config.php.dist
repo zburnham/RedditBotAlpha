@@ -1,0 +1,15 @@
+<?php
+/**
+ * storage.config.php.dist
+ * 
+ * File to store settings for sqlite database storing modhash issued by reddit on 
+ * each successful call after login.
+ * 
+ * @author zburnham
+ * @version 0.0.1
+ */
+
+return array(
+    'driver' => 'Pdo_Sqlite',
+    'database' => __DIR__ . '../data/modhash.db',
+);

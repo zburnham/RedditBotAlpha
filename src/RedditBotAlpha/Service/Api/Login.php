@@ -43,6 +43,8 @@ class Login extends AbstractApiClass
     
     /**
      * Calls the API.  Option to use SSL used here.
+     * 
+     * @return Login
      */
     public function call()
     {
@@ -52,7 +54,7 @@ class Login extends AbstractApiClass
         if ($this->getUseSsl()) {
             $this->setProtocol('https://');
         }
-        parent::call();
+        return parent::call();
     }
     
     /**

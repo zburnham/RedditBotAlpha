@@ -9,10 +9,12 @@
 
 namespace RedditBotAlpha;
 
-use Zend\Mvc\ModuleRouteListener;
-use Zend\Mvc\MvcEvent;
+use Zend\Db\Adapter\Adapter;
 
 use Zend\Http\Client as HttpClient;
+
+use Zend\Mvc\ModuleRouteListener;
+use Zend\Mvc\MvcEvent;
 
 use RedditBotAlpha\Controller;
 use RedditBotAlpha\Http;
@@ -50,6 +52,14 @@ class Module
     {
         return array(
             'factories' => array(
+                'modhash-storage' => function($sm) {
+                    
+                },
+                'storage-adapter' => function($sm) {
+                    $adapter = new Adapter($sm->get('storage-config'));
+                    return $adapter;
+                },
+                        
                 'listing' => function() {
                     return new Model\Listing;
                 },
@@ -79,34 +89,9 @@ class Module
                 'account-config' => function() {
                     return include(__DIR__ . '/config/account.config.php');
                 },
-//                'post' => function($sm) {
-//                    $post = new Model\Post;
-//                    return $post;
-//                },
-//                'url-config' => function () {
-//                    return new Config(include __DIR__ . '/config/url.config.php' );
-//                },
-//                'subreddit' => function ($sm) {
-//                    return new Model\Subreddit;
-//                },
-//                'redditRequest' => function ($sm) {
-//                    $request = new Model\Request;
-//                    $connection = $sm->get('connection');
-//                    $request->setConnection($connection);
-//                    $urls = $sm->get('url-config')->get('urls');
-//                    $request->setUrls($urls);
-//                    return $request;
-//                },
-//                'connection' => function ($sm) {
-//                    $connection = new Network\Connection;
-//                    $parameters = $sm->get('url-config')->get('parameters');
-//                    $connection->setParameters($parameters);
-//                    return $connection;
-//                },
-//                'redditResponse' => function ($sm) {
-//                    $response = new Model\Response;
-//                    return $response;
-//                },
+                'storage-config' => function() {
+                    return include(__DIR__ . '/config/storage.config.php');
+                },
                 'http-client' => function () {
                     $hc = new Http\Client;
                     return $hc;
