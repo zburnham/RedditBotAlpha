@@ -98,7 +98,7 @@ abstract class AbstractApiClass
         $client->setParameterPost($this->getPost());
         $response = $client->send();
         $this->setRawResponse($response);
-        $this->setDecodedResponse(json_decode($this->getRawResponse()->getBody()));
+        $this->setDecodedResponse(json_decode($this->getRawResponse()->getBody())->json);
         return $this;
     }
     

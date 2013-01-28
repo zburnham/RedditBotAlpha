@@ -53,13 +53,22 @@ class Module
         return array(
             'factories' => array(
                 'modhash-storage' => function($sm) {
-                    
+                    $sc = $sm->get('storage-config');
+                    $storage = new Storage\Modhash();
+                    $init = FALSE;
+                    if (!is_file($sc['database'])) {
+                        $init = TRUE; // have to do this here because instantiating
+                                      // the adapter creates the database file
+                                      // if it doesn't exist
+                    }
+                    $adapter = new Adapter($sc);
+                    if ($init) {
+                        $adapter->query('CREATE TABLE modhash(user TEXT, modhash TEXT)',
+                                Adapter::QUERY_MODE_EXECUTE);
+                    }
+                    $storage->setAdapter($adapter);
+                    return $storage;
                 },
-                'storage-adapter' => function($sm) {
-                    $adapter = new Adapter($sm->get('storage-config'));
-                    return $adapter;
-                },
-                        
                 'listing' => function() {
                     return new Model\Listing;
                 },
@@ -74,6 +83,7 @@ class Module
                 },
                 'api-login' => function($sm) {
                     $login = new Service\API\Login;
+                    $login->setSm($sm);
                     $login->setHttpClient($sm->get('http-client'));
                     $uc = $sm->get('url-config');
                     $ac = $sm->get('account-config');

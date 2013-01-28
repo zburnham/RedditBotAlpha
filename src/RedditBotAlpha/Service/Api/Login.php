@@ -11,8 +11,17 @@ namespace RedditBotAlpha\Service\API;
 
 use RedditBotAlpha\Service\Api\AbstractApiClass;
 
+use Zend\ServiceManager\ServiceManager;
+
 class Login extends AbstractApiClass
 {
+    /**
+     * ServiceManager instance.
+     *
+     * @var ServiceManager
+     */
+    protected $sm;
+    
     /**
      * Reddit supports SSL login.
      *
@@ -35,6 +44,15 @@ class Login extends AbstractApiClass
     protected $passwd;
     
     /**
+     * rem specifies whether or not the session cookie returned should last beyond 
+     * the current browser session (that is, if rem is True the cookie will have 
+     * an explicit expiration far in the future indicating that it is not a session cookie.)
+     *
+     * @var bool
+     */
+    protected $rem;
+    
+    /**
      * Must be json for the style of auth used in this documentation.
      *
      * @var string
@@ -54,9 +72,33 @@ class Login extends AbstractApiClass
         if ($this->getUseSsl()) {
             $this->setProtocol('https://');
         }
-        return parent::call();
+        $response = parent::call();
+        $decodedResponse = $this->getDecodedResponse();
+//        die(var_dump($decodedResponse));
+        $this->getSm()->get('modhash-storage')
+                ->storeModhash($this->getUser(), 
+                        $decodedResponse->data->modhash);
+        return $response;
     }
     
+    /**
+     * @return ServiceManager
+     */
+    public function getSm()
+    {
+        return $this->sm;
+    }
+
+    /**
+     * @param \Zend\ServiceManager\ServiceManager $sm
+     * @return \RedditBotAlpha\Service\API\Login
+     */
+    public function setSm(ServiceManager $sm)
+    {
+        $this->sm = $sm;
+        return $this;
+    }
+
     /**
      * @return string
      */
@@ -90,6 +132,24 @@ class Login extends AbstractApiClass
     public function setPasswd($passwd)
     {
         $this->passwd = $passwd;
+        return $this;
+    }
+    
+    /**
+     * @return bool
+     */
+    public function getRem()
+    {
+        return $this->rem;
+    }
+
+    /**
+     * @param bool $rem
+     * @return \RedditBotAlpha\Service\API\Login
+     */
+    public function setRem($rem)
+    {
+        $this->rem = $rem;
         return $this;
     }
 
