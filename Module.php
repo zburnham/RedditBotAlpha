@@ -9,18 +9,16 @@
 
 namespace RedditBotAlpha;
 
-use Zend\Db\Adapter\Adapter;
-
-use Zend\Http\Client as HttpClient;
-
-use Zend\Mvc\ModuleRouteListener;
-use Zend\Mvc\MvcEvent;
-
 use RedditBotAlpha\Controller;
 use RedditBotAlpha\Http;
 use RedditBotAlpha\Hydrator;
 use RedditBotAlpha\Model;
 use RedditBotAlpha\Service;
+
+use Zend\Db\Adapter\Adapter;
+use Zend\Http\Client as HttpClient;
+use Zend\Mvc\ModuleRouteListener;
+use Zend\Mvc\MvcEvent;
 
 class Module
 {
@@ -57,14 +55,11 @@ class Module
                     $storage = new Storage\Modhash();
                     $init = FALSE;
                     if (!is_file($sc['database'])) {
-                        $init = TRUE; // have to do this here because instantiating
-                                      // the adapter creates the database file
-                                      // if it doesn't exist
+                        $init = TRUE; 
                     }
                     $adapter = new Adapter($sc);
                     if ($init) {
-                        $adapter->query('CREATE TABLE modhash(user TEXT, modhash TEXT)',
-                                Adapter::QUERY_MODE_EXECUTE);
+                        $storage->initTable();
                     }
                     $storage->setAdapter($adapter);
                     return $storage;

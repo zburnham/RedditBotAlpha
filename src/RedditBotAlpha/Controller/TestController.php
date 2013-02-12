@@ -39,11 +39,14 @@ class TestController extends AbstractActionController
     {
         $login = $this->getServiceLocator()->get('api-login');
         $response = $login->call();
-        $decodedResponse = $response->getDecodedResponse();
+        //$decodedResponse = $response->getDecodedResponse();
         $storage = $this->getServiceLocator()->get('modhash-storage');
         $modhash = $storage->getModhash($login->getUser());
+        $cookie = $response->getRawResponse()->getCookie();
         $view = new ViewModel(array('response' => $response->getDecodedResponse(),
-            'modhash' => $modhash));
+            'modhash' => $modhash,
+            'rawResponse' => $response->getRawResponse(),
+            'cookie' => $cookie));
         return $view;
     }
 }

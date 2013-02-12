@@ -9,38 +9,47 @@
 
 namespace RedditBotAlpha\Storage;
 
-class Modhash
+class Modhash extends AbstractStorage
 {
-    protected $adapter;
-    
+    /**
+     * Stores the modhash value.
+     * TODO see if we can make this database-agnostic, kind of SQLite-centric.
+     * 
+     * @param string $user
+     * @param string $hash
+     * @return void
+     */
     public function storeModhash($user, $hash) 
     {
-        // check for existing
-        $result = $this->getAdapter()
-                ->query('SELECT * FROM `modhash` WHERE `user` = ?', array($user));
-        if (0 < $result->count()) {
-            $this->getAdapter()->query('DELETE FROM `modhash` WHERE `user` = ?' , array($user));
-        }
+        $this->getAdapter()->query('DELETE FROM `modhash` WHERE `user` = ?' , array($user));
         $this->getAdapter()
                 ->query('INSERT INTO `modhash` (user, modhash) VALUES (?,?)',
                         array($user,$hash)); // TODO probably some better error handling
     }
     
+    /**
+     * Set up the table if necessary.
+     * TODO this is also SQLite-centric.
+     * 
+     * @return void
+     */
+    public function initTable()
+    {
+        $adapter = $this->getAdapter();
+        $adapter->query('CREATE TABLE modhash(user TEXT, modhash TEXT)',
+                                Adapter::QUERY_MODE_EXECUTE);
+    }
+    
+    /**
+     * Returns the modhash for a given user.
+     * 
+     * @param string $user
+     * @return array
+     */
     public function getModhash($user) 
     {
         $result = $this->getAdapter($user)
                 ->query('SELECT modhash FROM `modhash` WHERE user = ?', array($user));
         return $result->current(); // TODO same as above, better error handling
-    }
-    
-    public function getAdapter()
-    {
-        return $this->adapter;
-    }
-
-    public function setAdapter($adapter)
-    {
-        $this->adapter = $adapter;
-        return $this;
     }
 }
