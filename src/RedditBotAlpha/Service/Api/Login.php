@@ -7,7 +7,7 @@
  * @version 0.0.1
  */
 
-namespace RedditBotAlpha\Service\API;
+namespace RedditBotAlpha\Service\Api;
 
 use RedditBotAlpha\Service\Api\AbstractApiClass;
 

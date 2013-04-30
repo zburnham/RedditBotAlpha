@@ -9,6 +9,7 @@
 namespace RedditBotAlpha\Http;
 
 use Zend\Http\Client as HttpClient;
+use Zend\ServiceManager\ServiceManager;
 
 class Client extends HttpClient
 {
