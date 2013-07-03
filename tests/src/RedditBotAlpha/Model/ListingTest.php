@@ -33,10 +33,9 @@ class ListingTest extends \PHPUnit_Framework_TestCase {
      * @todo   Implement testGetBefore().
      */
     public function testGetBefore() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $value = '123456';
+        $this->object->setBefore($value);
+        $this->assertEquals($value, $this->object->getBefore());
     }
 
     /**
@@ -44,10 +43,9 @@ class ListingTest extends \PHPUnit_Framework_TestCase {
      * @todo   Implement testSetBefore().
      */
     public function testSetBefore() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $value = '123456';
+        $this->object->setBefore($value);
+        $this->assertEquals($value, $this->object->getBefore());
     }
 
     /**
@@ -55,10 +53,9 @@ class ListingTest extends \PHPUnit_Framework_TestCase {
      * @todo   Implement testGetAfter().
      */
     public function testGetAfter() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $value = '123456';
+        $this->object->setAfter($value);
+        $this->assertEquals($value, $this->object->getAfter());
     }
 
     /**
@@ -66,10 +63,9 @@ class ListingTest extends \PHPUnit_Framework_TestCase {
      * @todo   Implement testSetAfter().
      */
     public function testSetAfter() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $value = '123456';
+        $this->object->setAfter($value);
+        $this->assertEquals($value, $this->object->getAfter());
     }
 
     /**
@@ -77,10 +73,9 @@ class ListingTest extends \PHPUnit_Framework_TestCase {
      * @todo   Implement testGetModhash().
      */
     public function testGetModhash() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $modhash = 'y581uf36ho6d2c6d8863d0d8517122e8491bde89ccafd8e7b1';
+        $this->object->setModhash($modhash);
+        $this->assertEquals($modhash, $this->object->getModhash());
     }
 
     /**
@@ -88,10 +83,9 @@ class ListingTest extends \PHPUnit_Framework_TestCase {
      * @todo   Implement testSetModhash().
      */
     public function testSetModhash() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $modhash = 'y581uf36ho6d2c6d8863d0d8517122e8491bde89ccafd8e7b1';
+        $this->object->setModhash($modhash);
+        $this->assertEquals($modhash, $this->object->getModhash());
     }
 
     /**
@@ -99,10 +93,9 @@ class ListingTest extends \PHPUnit_Framework_TestCase {
      * @todo   Implement testGetData().
      */
     public function testGetData() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $data = array('foo' => 'bar', 'baz' => 'bat');
+        $this->object->setData($data);
+        $this->assertSame($data, $this->object->getData());
     }
 
     /**
@@ -110,10 +103,8 @@ class ListingTest extends \PHPUnit_Framework_TestCase {
      * @todo   Implement testSetData().
      */
     public function testSetData() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $data = array('foo' => 'bar', 'baz' => 'bat');
+        $this->object->setData($data);
+        $this->assertSame($data, $this->object->getData());
     }
-
 }
