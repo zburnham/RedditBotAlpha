@@ -27,6 +27,11 @@ class ThingTest extends \PHPUnit_Framework_TestCase {
     protected function tearDown() {
         
     }
+    
+    public function testSanity()
+    {
+        $this->assertInstanceOf('\RedditBotAlpha\Model\Thing', $this->object);
+    }
 
     /**
      * @covers RedditBotAlpha\Model\Thing::getUps
@@ -34,9 +39,8 @@ class ThingTest extends \PHPUnit_Framework_TestCase {
      */
     public function testGetUps() {
         // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $this->object->setUps(69);
+        $this->assertSame(69, $this->object->getUps());
     }
 
     /**
@@ -45,9 +49,8 @@ class ThingTest extends \PHPUnit_Framework_TestCase {
      */
     public function testSetUps() {
         // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $this->object->setUps(69);
+        $this->assertSame(69, $this->object->getUps());
     }
 
     /**
@@ -55,10 +58,8 @@ class ThingTest extends \PHPUnit_Framework_TestCase {
      * @todo   Implement testGetDowns().
      */
     public function testGetDowns() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $this->object->setDowns(13);
+        $this->assertSame(13, $this->object->getDowns());
     }
 
     /**
@@ -66,10 +67,8 @@ class ThingTest extends \PHPUnit_Framework_TestCase {
      * @todo   Implement testSetDowns().
      */
     public function testSetDowns() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $this->object->setDowns(13);
+        $this->assertSame(13, $this->object->getDowns());
     }
 
     /**
@@ -77,10 +76,8 @@ class ThingTest extends \PHPUnit_Framework_TestCase {
      * @todo   Implement testGetLikes().
      */
     public function testGetLikes() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $this->object->setLikes(TRUE);
+        $this->assertSame(TRUE, $this->object->getLikes());
     }
 
     /**
@@ -88,10 +85,8 @@ class ThingTest extends \PHPUnit_Framework_TestCase {
      * @todo   Implement testSetLikes().
      */
     public function testSetLikes() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $this->object->setLikes(TRUE);
+        $this->assertSame(TRUE, $this->object->getLikes());
     }
 
     /**
@@ -99,10 +94,9 @@ class ThingTest extends \PHPUnit_Framework_TestCase {
      * @todo   Implement testGetCreated().
      */
     public function testGetCreated() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $value = 0+ '12345.6';
+        $this->object->setCreated($value);
+        $this->assertSame($value, $this->object->getCreated());
     }
 
     /**
@@ -110,10 +104,9 @@ class ThingTest extends \PHPUnit_Framework_TestCase {
      * @todo   Implement testSetCreated().
      */
     public function testSetCreated() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $value = 0+ '65432.1';
+        $this->object->setCreated($value);
+        $this->assertSame($value, $this->object->getCreated());
     }
 
     /**
@@ -121,10 +114,9 @@ class ThingTest extends \PHPUnit_Framework_TestCase {
      * @todo   Implement testGetCreatedUtc().
      */
     public function testGetCreatedUtc() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $value = 0+ '12345.6';
+        $this->object->setCreated($value);
+        $this->assertSame($value, $this->object->getCreated());
     }
 
     /**
@@ -132,10 +124,9 @@ class ThingTest extends \PHPUnit_Framework_TestCase {
      * @todo   Implement testSetCreatedUtc().
      */
     public function testSetCreatedUtc() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $value = 0+ '65432.1';
+        $this->object->setCreated($value);
+        $this->assertSame($value, $this->object->getCreated());
     }
 
     /**
@@ -143,10 +134,9 @@ class ThingTest extends \PHPUnit_Framework_TestCase {
      * @todo   Implement testGetId().
      */
     public function testGetId() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $value = 'awja983454';
+        $this->object->setId($value);
+        $this->assertSame($value, $this->object->getId());
     }
 
     /**
@@ -154,10 +144,9 @@ class ThingTest extends \PHPUnit_Framework_TestCase {
      * @todo   Implement testSetId().
      */
     public function testSetId() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $value = 'j9398ua8';
+        $this->object->setId($value);
+        $this->assertSame($value, $this->object->getId());
     }
 
     /**
@@ -165,10 +154,9 @@ class ThingTest extends \PHPUnit_Framework_TestCase {
      * @todo   Implement testGetName().
      */
     public function testGetName() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $value = 'oisjf928as';
+        $this->object->setId($value);
+        $this->assertSame($value, $this->object->getId());
     }
 
     /**
@@ -176,21 +164,19 @@ class ThingTest extends \PHPUnit_Framework_TestCase {
      * @todo   Implement testSetName().
      */
     public function testSetName() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+        $value = 'isaj3u45a';
+        $this->object->setId($value);
+        $this->assertSame($value, $this->object->getId());
     }
 
     /**
      * @covers RedditBotAlpha\Model\Thing::getKind
      * @todo   Implement testGetKind().
      */
-    public function testGetKind() {
-        // Remove the following lines when you implement this test.
-        $this->markTestIncomplete(
-                'This test has not been implemented yet.'
-        );
+    public function testGetKind() { 
+        $value = 'Listing';
+        $this->object->setKind($value);
+        $this->assertSame($value);
     }
 
     /**

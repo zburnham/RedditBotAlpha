@@ -144,9 +144,9 @@ class Thing
      * @param bool $likes
      * @return \RedditBotAlpha\Model\Thing
      */
-    public function setLikes(bool $likes)
+    public function setLikes($likes)
     {
-        $this->likes = $likes;
+        $this->likes = (bool)$likes;
         return $this;
     }
 
