@@ -30,7 +30,6 @@ class ListingTest extends \PHPUnit_Framework_TestCase {
 
     /**
      * @covers RedditBotAlpha\Model\Listing::getBefore
-     * @todo   Implement testGetBefore().
      */
     public function testGetBefore() {
         $value = '123456';
@@ -40,7 +39,6 @@ class ListingTest extends \PHPUnit_Framework_TestCase {
 
     /**
      * @covers RedditBotAlpha\Model\Listing::setBefore
-     * @todo   Implement testSetBefore().
      */
     public function testSetBefore() {
         $value = '123456';
@@ -50,7 +48,6 @@ class ListingTest extends \PHPUnit_Framework_TestCase {
 
     /**
      * @covers RedditBotAlpha\Model\Listing::getAfter
-     * @todo   Implement testGetAfter().
      */
     public function testGetAfter() {
         $value = '123456';
@@ -60,7 +57,6 @@ class ListingTest extends \PHPUnit_Framework_TestCase {
 
     /**
      * @covers RedditBotAlpha\Model\Listing::setAfter
-     * @todo   Implement testSetAfter().
      */
     public function testSetAfter() {
         $value = '123456';
@@ -90,7 +86,6 @@ class ListingTest extends \PHPUnit_Framework_TestCase {
 
     /**
      * @covers RedditBotAlpha\Model\Listing::getData
-     * @todo   Implement testGetData().
      */
     public function testGetData() {
         $data = array('foo' => 'bar', 'baz' => 'bat');
@@ -100,7 +95,6 @@ class ListingTest extends \PHPUnit_Framework_TestCase {
 
     /**
      * @covers RedditBotAlpha\Model\Listing::setData
-     * @todo   Implement testSetData().
      */
     public function testSetData() {
         $data = array('foo' => 'bar', 'baz' => 'bat');

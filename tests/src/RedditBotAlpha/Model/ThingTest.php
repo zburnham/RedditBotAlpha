@@ -176,7 +176,7 @@ class ThingTest extends \PHPUnit_Framework_TestCase {
     public function testGetKind() { 
         $value = 'Listing';
         $this->object->setKind($value);
-        $this->assertSame($value);
+        $this->assertSame($value, $this->object->getKind());
     }
 
     /**
