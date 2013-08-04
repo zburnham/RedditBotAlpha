@@ -66,7 +66,6 @@ class ListingTest extends \PHPUnit_Framework_TestCase {
 
     /**
      * @covers RedditBotAlpha\Model\Listing::getModhash
-     * @todo   Implement testGetModhash().
      */
     public function testGetModhash() {
         $modhash = 'y581uf36ho6d2c6d8863d0d8517122e8491bde89ccafd8e7b1';
@@ -76,7 +75,6 @@ class ListingTest extends \PHPUnit_Framework_TestCase {
 
     /**
      * @covers RedditBotAlpha\Model\Listing::setModhash
-     * @todo   Implement testSetModhash().
      */
     public function testSetModhash() {
         $modhash = 'y581uf36ho6d2c6d8863d0d8517122e8491bde89ccafd8e7b1';

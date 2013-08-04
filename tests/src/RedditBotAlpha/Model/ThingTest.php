@@ -35,7 +35,6 @@ class ThingTest extends \PHPUnit_Framework_TestCase {
 
     /**
      * @covers RedditBotAlpha\Model\Thing::getUps
-     * @todo   Implement testGetUps().
      */
     public function testGetUps() {
         // Remove the following lines when you implement this test.
@@ -55,7 +54,6 @@ class ThingTest extends \PHPUnit_Framework_TestCase {
 
     /**
      * @covers RedditBotAlpha\Model\Thing::getDowns
-     * @todo   Implement testGetDowns().
      */
     public function testGetDowns() {
         $this->object->setDowns(13);
@@ -64,7 +62,6 @@ class ThingTest extends \PHPUnit_Framework_TestCase {
 
     /**
      * @covers RedditBotAlpha\Model\Thing::setDowns
-     * @todo   Implement testSetDowns().
      */
     public function testSetDowns() {
         $this->object->setDowns(13);
@@ -73,7 +70,6 @@ class ThingTest extends \PHPUnit_Framework_TestCase {
 
     /**
      * @covers RedditBotAlpha\Model\Thing::getLikes
-     * @todo   Implement testGetLikes().
      */
     public function testGetLikes() {
         $this->object->setLikes(TRUE);
@@ -82,7 +78,6 @@ class ThingTest extends \PHPUnit_Framework_TestCase {
 
     /**
      * @covers RedditBotAlpha\Model\Thing::setLikes
-     * @todo   Implement testSetLikes().
      */
     public function testSetLikes() {
         $this->object->setLikes(TRUE);
@@ -91,7 +86,6 @@ class ThingTest extends \PHPUnit_Framework_TestCase {
 
     /**
      * @covers RedditBotAlpha\Model\Thing::getCreated
-     * @todo   Implement testGetCreated().
      */
     public function testGetCreated() {
         $value = 0+ '12345.6';
@@ -101,7 +95,6 @@ class ThingTest extends \PHPUnit_Framework_TestCase {
 
     /**
      * @covers RedditBotAlpha\Model\Thing::setCreated
-     * @todo   Implement testSetCreated().
      */
     public function testSetCreated() {
         $value = 0+ '65432.1';
@@ -111,7 +104,6 @@ class ThingTest extends \PHPUnit_Framework_TestCase {
 
     /**
      * @covers RedditBotAlpha\Model\Thing::getCreatedUtc
-     * @todo   Implement testGetCreatedUtc().
      */
     public function testGetCreatedUtc() {
         $value = 0+ '12345.6';
@@ -121,7 +113,6 @@ class ThingTest extends \PHPUnit_Framework_TestCase {
 
     /**
      * @covers RedditBotAlpha\Model\Thing::setCreatedUtc
-     * @todo   Implement testSetCreatedUtc().
      */
     public function testSetCreatedUtc() {
         $value = 0+ '65432.1';
@@ -131,7 +122,6 @@ class ThingTest extends \PHPUnit_Framework_TestCase {
 
     /**
      * @covers RedditBotAlpha\Model\Thing::getId
-     * @todo   Implement testGetId().
      */
     public function testGetId() {
         $value = 'awja983454';
@@ -141,7 +131,6 @@ class ThingTest extends \PHPUnit_Framework_TestCase {
 
     /**
      * @covers RedditBotAlpha\Model\Thing::setId
-     * @todo   Implement testSetId().
      */
     public function testSetId() {
         $value = 'j9398ua8';
@@ -151,7 +140,6 @@ class ThingTest extends \PHPUnit_Framework_TestCase {
 
     /**
      * @covers RedditBotAlpha\Model\Thing::getName
-     * @todo   Implement testGetName().
      */
     public function testGetName() {
         $value = 'oisjf928as';
@@ -161,7 +149,6 @@ class ThingTest extends \PHPUnit_Framework_TestCase {
 
     /**
      * @covers RedditBotAlpha\Model\Thing::setName
-     * @todo   Implement testSetName().
      */
     public function testSetName() {
         $value = 'isaj3u45a';
@@ -171,7 +158,6 @@ class ThingTest extends \PHPUnit_Framework_TestCase {
 
     /**
      * @covers RedditBotAlpha\Model\Thing::getKind
-     * @todo   Implement testGetKind().
      */
     public function testGetKind() { 
         $value = 'Listing';
@@ -181,7 +167,6 @@ class ThingTest extends \PHPUnit_Framework_TestCase {
 
     /**
      * @covers RedditBotAlpha\Model\Thing::setKind
-     * @todo   Implement testSetKind().
      */
     public function testSetKind() {
         // Remove the following lines when you implement this test.
@@ -192,7 +177,6 @@ class ThingTest extends \PHPUnit_Framework_TestCase {
 
     /**
      * @covers RedditBotAlpha\Model\Thing::getData
-     * @todo   Implement testGetData().
      */
     public function testGetData() {
         // Remove the following lines when you implement this test.
@@ -203,7 +187,6 @@ class ThingTest extends \PHPUnit_Framework_TestCase {
 
     /**
      * @covers RedditBotAlpha\Model\Thing::setData
-     * @todo   Implement testSetData().
      */
     public function testSetData() {
         // Remove the following lines when you implement this test.
